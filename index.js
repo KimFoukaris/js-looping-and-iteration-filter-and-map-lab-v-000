@@ -15,3 +15,12 @@ function exactMatch(arr, criteria) {
     });
   });
 }
+
+function exactMatchToList(drivers, criteria) {
+  let newDrivers = arr.filter(function(obj) {
+    return Object.keys(criteria).every(function(c) {
+      return obj[c] == criteria[c];
+    });
+  });
+  return newDrivers.map(function(newDriver) {return newDriver.name;});
+}
