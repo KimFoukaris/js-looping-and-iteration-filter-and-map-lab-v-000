@@ -8,8 +8,10 @@ function driverNamesWithRevenueOver(drivers, revenue) {
   return result = newDrivers.map(function(newDriver) {return newDriver.name;});
 }
 
-function exactMatch(drivers, {a: b}) {
-  const newDrivers = drivers.filter(function(driver) {return driver.a === b});
-  console.log(newDrivers);
-  return newDrivers;
+function exactMatch(drivers, criteria) {
+  return drivers.filter(function(driver) {
+    return driver.keys(criteria).every(function(c) {
+      return driver[c] == criteria[c];
+    });
+  });
 }
