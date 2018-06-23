@@ -16,7 +16,7 @@ function exactMatch(arr, criteria) {
   });
 }
 
-function exactMatchToList(drivers, criteria) {
+function exactMatchToList(arr, criteria) {
   let newDrivers = arr.filter(function(obj) {
     return Object.keys(criteria).every(function(c) {
       return obj[c] == criteria[c];
